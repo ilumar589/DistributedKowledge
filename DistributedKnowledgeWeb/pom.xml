@@ -5,9 +5,9 @@
     <artifactId>parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>org.distributed.lectures</groupId>
+  
+  <groupId>org.distributed.lectures.parent</groupId>
   <artifactId>web</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
   
@@ -40,9 +40,10 @@
   <dependencies>
   
   	<dependency>
-			<groupId>AngBck</groupId>
-			<artifactId>AngBck</artifactId>
+			<groupId>org.distributed.lectures.parent</groupId>
+			<artifactId>services</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<type>jar</type>
 		</dependency>
   
   	<dependency>

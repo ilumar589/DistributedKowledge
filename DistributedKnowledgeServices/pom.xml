@@ -5,10 +5,10 @@
     <artifactId>parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>org.distributed.lectures</groupId>
-  <artifactId>services</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   
+  <groupId>org.distributed.lectures.parent</groupId>
+  <artifactId>services</artifactId>
+  <packaging>jar</packaging>
   
   <dependencies>
   

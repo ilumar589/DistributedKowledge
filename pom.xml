@@ -6,8 +6,8 @@
   <packaging>pom</packaging>
   
    <modules>
-        <module>services</module>
-        <module>web</module>
+        <module>DistributedKnowledgeServices</module>
+        <module>DistributedKnowledgeWeb</module>
         
     </modules>
 

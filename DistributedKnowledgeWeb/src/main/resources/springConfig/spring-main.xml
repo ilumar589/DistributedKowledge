@@ -21,7 +21,7 @@
     <mvc:default-servlet-handler/>
 
 
-	<mvc:resources mapping="/resources/**" location="/script/"/>
+	<mvc:resources mapping="/resources/**" location="/resources/"/>
 
 	<mvc:view-controller path="/" view-name="/app"/>
 	

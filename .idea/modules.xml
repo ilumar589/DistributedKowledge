@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" group="parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/DistributedKnowledgeServices/services (1).iml" filepath="$PROJECT_DIR$/DistributedKnowledgeServices/services (1).iml" group="parent and modules" />
+      <module fileurl="file://$PROJECT_DIR$/DistributedKnowledgeWeb/web (1).iml" filepath="$PROJECT_DIR$/DistributedKnowledgeWeb/web (1).iml" group="parent and modules" />
+    </modules>
+  </component>
+</project>
+

@@ -12,11 +12,11 @@
         http://www.springframework.org/schema/security/spring-security.xsd">
        
        
-<!--     <context:component-scan base-package="ro.angular.test.backend.services.util"/>     -->
+    <context:component-scan base-package="org.distributed.knowledge.services.util"/>    
     
     <security:http auto-config='true'>
     	<security:form-login login-page="/login.html"/>
-    	<security:intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+    	<security:intercept-url pattern="/org" access="IS_AUTHENTICATED_ANONYMOUSLY" />
 	</security:http>    
         
         
