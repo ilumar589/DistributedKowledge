@@ -18,8 +18,8 @@
     <bean id="DataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/angularpalyground"/>
-        <property name="username" value="" />
-        <property name="password" value="" />
+        <property name="username" value="admin" />
+        <property name="password" value="090358Ilumar" />
     </bean>
     
     <!-- Session Factory Declaration -->

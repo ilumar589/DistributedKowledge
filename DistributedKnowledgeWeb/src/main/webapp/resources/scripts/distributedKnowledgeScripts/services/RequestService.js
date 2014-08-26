@@ -1,0 +1,1 @@
+var distributedKnowledge = angular.module('DistributedKnowledge');
