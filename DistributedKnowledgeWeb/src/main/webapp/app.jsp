@@ -20,7 +20,8 @@
 	<div>
 	<ul class="nav nav-tabs" role="tablist">
   		<li class="active"><a ng-click=functionObject.setRoute('home')>Home</a></li>
-  		<li><a ng-click=functionObject.setRoute('login')>Login</a></li>
+  		<li><a data-animation="am-fade-and-scale" data-placement="center" bs-modal="customLoginModal"
+  		       ng-click=functionObject.showLoginModal>Login</a></li>
   		
 	</ul>
 	</div>
@@ -39,6 +40,7 @@
 		<script type="text/javascript" src="<c:url value="resources/scripts/bower_components/angular-strap/dist/angular-strap.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="resources/scripts/bower_components/angular-strap/dist/angular-strap.tpl.js"/>"></script>
 		<script type="text/javascript" src="<c:url value="resources/scripts/bower_components/bootstrap/dist/js/bootstrap.js"/>"></script>
+		<script type="text/javascript" src="<c:url value="resources/scripts/bower_components/angular-cookies/angular-cookies.js"/>"></script>
 		
 		
 	<!-- Custom angular scripts -->

@@ -1,4 +1,9 @@
-var distributedKnowledge = angular.module('DistributedKnowledge',['ngRoute','ngSanitize']);
+var distributedKnowledge = angular.module('DistributedKnowledge',['ngRoute',
+                                                                  'ngSanitize',
+                                                                  'ngCookies',
+                                                                  'ngAnimate',
+                                                                  'ngSanitize',
+                                                                  'mgcrea.ngStrap']);
 
 distributedKnowledge.config(['$routeProvider',function($routeProvider){
 	
@@ -7,6 +12,11 @@ distributedKnowledge.config(['$routeProvider',function($routeProvider){
 		when('/login',{templateUrl: 'views/partials/login.html', controller: 'LoginController', routeName: 'login'}).
 		otherwise({templateUrl: 'views/partials/home.html', controller: 'HomeController', routeName: 'home'});
 	
+}]);
+
+
+distributedKnowledge.config(['$modalProvider',function($modalProvider){
+	angular.extend($modalProvider.defaults, { html : true});
 }]);
 
 
@@ -40,7 +50,7 @@ distributedKnowledge.factory('ClientSideSession',[function(){
 }]);
 
 
-distributeKnowledge.factory('ClientSideAccount',['$resource','$http',function($resource,$http){
+distributedKnowledge.factory('ClientSideAccount',['$resource','$http',function($resource,$http){
 	
 	return {
 		
@@ -81,6 +91,16 @@ distributedKnowledge.factory('ClientSideAuthentication',['$rootScope','$scope','
 				$rootScope.status = status;
 				$rootScope.notification = null;
 				$cookieStore.put('authenticated',true);
+				ClientSideAccount.getAccount.get(function succes(data){
+					
+					var session = ClientSideSession.create(data.userName,
+														   data.firstName,
+														   data.lastName,
+														   data.userRole);
+					
+					$cookieStore.put('sessionData',session);
+					
+				});
 				
 			}).error(function (data, status, headers, config){
 				
@@ -92,14 +112,33 @@ distributedKnowledge.factory('ClientSideAuthentication',['$rootScope','$scope','
 
 
 
-distributedKnowledge.controller('GlobalController',['$scope','$location',function($scope,$location){
+distributedKnowledge.controller('GlobalController',['$scope','$location','$modal',function($scope,$location,$modal){
 	
+	$scope.dataObject = {};
 	$scope.functionObject = {};
+	
+	$scope.customLoginModal = $modal({
+		
+		scope : $scope,
+		template : 'views/partials/login.html',
+		show : false
+		
+	});
 	
 	$scope.functionObject.setRoute = function(routeLocation){
 		
 		$location.path(routeLocation);
 		
+	};
+	
+	$scope.functionObject.showLoginModal = function(){
+		
+		$scope.customLoginModal.$promise.then($scope.customLoginModal.show);
+	};
+	
+	$scope.functionObject.hideLoginModal = function(){
+		
+		$scope.customLoginModal.$promise.then($scope.customLoginModal.hide);
 	};
 	
 }]);
